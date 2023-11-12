@@ -1,8 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const fs = require('fs');
-const path = require('path');
 const User = require('../models/user');
+const Blog = require('../models/blog');
 
 exports.register = async function (req, res) {
     try {
@@ -127,6 +126,11 @@ exports.follow_user = async function (req, res) {
     try {
         const follower = await User.findById(followerId);
         const following = await User.findById(followingId);
+
+        // chek if user is following himself
+        if (followerId === followingId) {
+            return res.status(400).json({ message: 'You cannot follow yourself.' });
+        }
 
         if (!follower || !following) {
             return res.status(404).json({ message: 'User not found.' });
