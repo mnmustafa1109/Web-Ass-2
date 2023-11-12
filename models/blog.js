@@ -17,6 +17,8 @@ const BlogSchema = new Schema({
             rating: { type: Number, required: true, min: 1, max: 5 },
         }
     ],
+    keywords: [{ type: String }],
+    categories: [{ type: String }],
 }, { timestamps: true });
 
 const Blog = mongoose.model('Blog', BlogSchema);
