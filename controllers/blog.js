@@ -15,6 +15,22 @@ exports.blog_create = async function (req, res) {
         });
 
         const savedBlog = await blog.save();
+
+        // check all users that are following the owner of the blog
+        // and send them a notification
+        const followers = user.followers;
+
+        // send notifications to all followers
+        const notification = "New blog post by " + user.username + ": " + req.body.title + ". Check it out!";
+        const notifications = followers.map(follower => notification);
+
+        // add notifications to the followers
+        await User.updateMany(
+            { _id: { $in: followers } },
+            { $push: { notifications: notifications } },
+        );
+
+
         res.status(201).json({ message: 'Blog Post created successfully with id: ' + savedBlog._id });
     } catch (error) {
         console.error(error);

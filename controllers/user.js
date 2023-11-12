@@ -196,7 +196,8 @@ exports.feed = async function (req, res) {
 
         const followedUsers = user.following;
 
-        const blogs = await Blog.find({ owner: { $in: followedUsers } })
+        // also check if the blog is active
+        const blogs = await Blog.find({ owner: { $in: followedUsers }, status: 'active' })
             .populate('owner', 'username')
             .lean();
 
