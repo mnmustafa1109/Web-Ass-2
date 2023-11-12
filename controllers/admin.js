@@ -73,9 +73,15 @@ exports.viewBlogPost = async function (req, res) {
 
     try {
         const blog = await Blog.findById(blogId).populate('owner', 'username').lean();
+        if (!blog) {
+            return res.status(404).json({ message: 'Blog not found.' });
+        }
         res.status(200).json(blog);
     } catch (error) {
         console.error(error);
+        if (error.name === 'CastError') {
+            return res.status(404).json({ message: 'Blog not found.' });
+        }
         res.status(500).json({ message: 'Error fetching blog post.' });
     }
 };

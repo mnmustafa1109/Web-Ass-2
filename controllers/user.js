@@ -46,6 +46,10 @@ exports.login = async function (req, res) {
             return res.status(401).json({ message: 'Authentication failed. Wrong password.' });
         }
 
+        if (user.status === 'blocked') {
+            return res.status(401).json({ message: 'Authentication failed. User blocked.' });
+        }
+
         const token = jwt.sign({
             username: user.username, role: user.role, id: user._id
         }, process.env.SECRET_KEY, { expiresIn: '1h' });
