@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const path = require('path');
 const User = require('../models/user');
-const { find, findById } = require('../models/product');
 
 exports.register = async function (req, res) {
     try {
@@ -77,7 +76,7 @@ exports.profile = async function (req, res) {
         if (!user) {
             return res.status(404).json({ message: 'User not found.' });
         }
-        res.status(200).json({ name: user.username, email: user.email, role: user.role, profilePicture: user.profilePicture });
+        res.status(200).json({ name: user.username, email: user.email, role: user.role, profilePicture: user.profilePicture, followers: user.followers.length, following: user.following.length , notifications: user.notifications.length, status: user.status});
     }
     catch (error) {
         res.status(403).json({ message: 'Invalid token.' });
