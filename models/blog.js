@@ -19,6 +19,11 @@ const BlogSchema = new Schema({
     ],
     keywords: [{ type: String }],
     categories: [{ type: String }],
+    status: {
+        type: String,
+        enum: ['active', 'disabled'],
+        default: 'active',
+    },
 }, { timestamps: true });
 
 const Blog = mongoose.model('Blog', BlogSchema);

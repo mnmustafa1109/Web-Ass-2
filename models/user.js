@@ -36,6 +36,11 @@ const userSchema = new Schema({
     notifications: [{
         type: String, // You may want to customize the notification schema based on your requirements
     }],
+    status: {
+        type: String,
+        enum: ['active', 'blocked'],
+        default: 'active',
+    },
 });
 
 const User = mongoose.model('User', userSchema);
