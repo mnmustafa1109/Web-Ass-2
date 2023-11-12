@@ -15,4 +15,13 @@ router.get('/profile', user_controller.profile);
 
 router.post('/profile-pic',upload.single('profilePicture'), user_controller.profile_pic);
 
+router.post('/follow/:id', user_controller.follow_user);
+
+router.post('/unfollow/:id', user_controller.unfollow_user);
+
+router.get('/feed', user_controller.feed);
+
+router.get('/notifications', user_controller.notifications);
+
+
 module.exports = router;

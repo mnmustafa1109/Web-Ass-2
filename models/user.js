@@ -25,6 +25,17 @@ const userSchema = new Schema({
         type: String,
         default: '',
     },
+    following: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    }],
+    followers: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    }],
+    notifications: [{
+        type: String, // You may want to customize the notification schema based on your requirements
+    }],
 });
 
 const User = mongoose.model('User', userSchema);
