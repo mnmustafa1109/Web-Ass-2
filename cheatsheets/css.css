@@ -1,0 +1,186 @@
+/* CSS Cheatsheet */
+
+/* SELECTORS */
+/* Select elements by tag name */
+p {
+    font-size: 16px;
+}
+
+/* Select elements by class */
+.myClass {
+    font-size: 16px;
+}
+
+/* Select elements by ID */
+#myId {
+    font-size: 16px;
+}
+
+/* Select elements using descendant selectors */
+.parentElement .childElement {
+    font-size: 16px;
+}
+
+/* UNIVERSAL SELECTOR */
+* {
+    font-size: 16px;
+}
+
+/* SPECIFICITY */
+/* ID selectors have the highest specificity */
+#specific {
+    font-size: 16px;
+}
+
+/* Class and attribute selectors have medium specificity */
+.classSelector,
+[data-attribute="value"] {
+    font-size: 16px;
+}
+
+/* Element and pseudo-class selectors have lower specificity */
+element,
+:hover {
+    font-size: 16px;
+}
+
+.example {
+    /* PROPERTY-VALUE PAIRS */
+    /* Font Properties */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+
+    /* Text Properties */
+    text-align: center;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-transform: uppercase;
+
+    /* Background Properties */
+    background-color: #f0f0f0;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Box Model Properties */
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #999;
+
+    /* Display Property */
+    display: block;
+    display: inline;
+    display: inline-block;
+    display: none;
+    display: flex;
+    /* Flexbox container */
+}
+
+
+
+/* FLEXBOX LAYOUT */
+.container {
+    display: flex;
+    flex-direction: row;
+    /* row | row-reverse | column | column-reverse */
+    justify-content: center;
+    /* flex-start | flex-end | center | space-between | space-around */
+    align-items: center;
+    /* flex-start | flex-end | center | baseline | stretch */
+    flex-wrap: nowrap;
+    /* nowrap | wrap | wrap-reverse */
+    align-content: center;
+    /* flex-start | flex-end | center | space-between | space-around | stretch */
+
+    /* POSITIONING */
+    position: relative;
+    /* Relative to its normal position */
+    position: absolute;
+    /* Relative to the nearest positioned ancestor */
+    position: fixed;
+    /* Relative to the viewport */
+    z-index: 2;
+    /* Stacking order */
+
+
+    /* TRANSITIONS */
+    transition: property duration timing-function delay;
+    /* Example: transition: all 0.3s ease-in-out 0s; */
+}
+
+.item {
+    flex: 1;
+    /* flex-grow | flex-shrink | flex-basis */
+    order: 2;
+    /* Change order within the flex container */
+}
+
+
+@media screen and (max-width: 768px) {
+    /* CSS rules for screens with a maximum width of 768px */
+}
+
+
+/* ANIMATIONS */
+@keyframes animationName {
+    0% {
+        /* CSS rules for the start of the animation */
+    }
+
+    100% {
+        /* CSS rules for the end of the animation */
+    }
+}
+
+.element {
+    animation: animationName 3s ease-in-out 1s infinite alternate;
+}
+
+/* PSEUDO-CLASSES */
+a:hover {
+    /* Styles for a link when hovered */
+    font-size: 16px;
+
+}
+
+li:first-child {
+    /* Styles for the first child of a list */
+    font-size: 16px;
+
+}
+
+/* COMMENTS */
+/* This is a CSS comment */
+
+/* VENDOR PREFIXES */
+/* Apply vendor prefixes for browser compatibility */
+.div {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+    /* CSS rules for screens with a maximum width of 768px */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* CSS rules for screens between 768px and 1024px */
+}
+
+@media screen and (orientation: landscape) {
+    /* CSS rules for screens in landscape orientation */
+}
+
+@media print {
+    /* CSS rules for print styles */
+}
+
+/* You can customize media queries based on your design requirements. */

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PicoCSS Cheatsheet</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/picocss@2.0.0/dist/pico.min.css">
+    <style>
+        /* Custom styles if needed */
+    </style>
+</head>
+<body>
+    <h1>PicoCSS Cheatsheet</h1>
+
+    <h2>Container</h2>
+    <div class="container">
+        <!-- Your content goes here -->
+    </div>
+
+    <h2>Grid</h2>
+    <div class="row">
+        <div class="col-4">
+            <!-- Column 1 content -->
+        </div>
+        <div class="col-4">
+            <!-- Column 2 content -->
+        </div>
+        <div class="col-4">
+            <!-- Column 3 content -->
+        </div>
+    </div>
+
+    <h2>Text Styles</h2>
+    <p class="text-primary">Primary Text</p>
+    <p class="text-secondary">Secondary Text</p>
+    <p class="text-success">Success Text</p>
+    <p class="text-danger">Danger Text</p>
+
+    <h2>Buttons</h2>
+    <button class="btn">Default Button</button>
+    <button class="btn btn-primary">Primary Button</button>
+    <button class="btn btn-secondary">Secondary Button</button>
+
+    <h2>Forms</h2>
+    <form>
+        <div class="form-group">
+            <label for="inputField">Input Field</label>
+            <input type="text" id="inputField" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="textareaField">Textarea Field</label>
+            <textarea id="textareaField" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="selectField">Select Field</label>
+            <select id="selectField" class="form-control">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+
+    <h2>Articles</h2>
+    <article>
+        <h3>Article Title</h3>
+        <p>Article content goes here.</p>
+    </article>
+
+    <h2>Dropdowns</h2>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle">Dropdown</button>
+        <div class="dropdown-menu">
+            <a href="#">Item 1</a>
+            <a href="#">Item 2</a>
+            <a href="#">Item 3</a>
+        </div>
+    </div>
+
+    <h2>Modals</h2>
+    <button class="btn btn-primary" id="modalBtn">Open Modal</button>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" id="modalClose">&times;</span>
+            <h3>Modal Title</h3>
+            <p>Modal content goes here.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to control the modal
+        const modalBtn = document.getElementById("modalBtn");
+        const modal = document.getElementById("myModal");
+        const modalClose = document.getElementById("modalClose");
+
+        modalBtn.addEventListener("click", () => {
+            modal.style.display = "block";
+        });
+
+        modalClose.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    </script>
+</body>
+</html>

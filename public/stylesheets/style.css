@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+.form-container {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.form-container h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+button {
+  background: #007BFF;
+  color: #fff;
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+#profile-info {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #333;
+}
+
+#product-list {
+  margin: 20px 0;
+}
+
+#product-list table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+#product-list th, #product-list td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+#product-details {
+  display: none;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#product-form {
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
