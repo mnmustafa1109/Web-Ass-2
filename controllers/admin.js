@@ -100,6 +100,26 @@ exports.disableBlog = async function (req, res) {
     }
 };
 
+exports.enableBlog = async function (req, res) {
+    const blogId = req.params.id;
+
+    try {
+        const blog = await Blog.findById(blogId);
+
+        if (!blog) {
+            return res.status(404).json({ message: 'Blog not found.' });
+        }
+
+        blog.status = 'active';
+        await blog.save();
+
+        res.status(200).json({ message: 'Blog enabled successfully.' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Enabling blog failed.' });
+    }
+}
+
 function calculateAverageRating(ratings) {
     if (!ratings || ratings.length === 0) {
         return 0;

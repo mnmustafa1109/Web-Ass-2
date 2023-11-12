@@ -15,4 +15,6 @@ router.get('/blog/:id', adminController.viewBlogPost);
 
 router.put('/disable-blog/:id', adminController.disableBlog);
 
+router.put('/enable-blog/:id', adminController.enableBlog);
+
 module.exports = router;
