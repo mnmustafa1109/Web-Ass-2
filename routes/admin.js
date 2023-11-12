@@ -7,6 +7,8 @@ router.get('/users', adminController.viewAllUsers);
 
 router.put('/block-user/:id', adminController.blockUser);
 
+router.put('/unblock-user/:id', adminController.unblockUser);
+
 router.get('/blogs', adminController.listAllBlogPosts);
 
 router.get('/blog/:id', adminController.viewBlogPost);
