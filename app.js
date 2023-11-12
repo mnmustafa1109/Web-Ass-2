@@ -8,10 +8,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config();
 
-const productRouter = require('./routes/product');
+const blogRouter = require('./routes/blog');
 const userRouter = require('./routes/user');
+const adminRouter = require('./routes/admin');
 
 const authenticateJWT = require('./middleware/authentication.js');
+const isAdmin = require('./middleware/authorization.js');
 
 const app = express();
 
@@ -34,8 +36,9 @@ app.use('/uploads', express.static('uploads'));
 
 
 // routes
-app.use('/api/product',authenticateJWT, productRouter);
+app.use('/api/blog', authenticateJWT, blogRouter);
 app.use('/api/user', userRouter);
+app.use('/api/admin', authenticateJWT, isAdmin, adminRouter);
 
 //hello world
 app.get('/hello', function(req, res) {
