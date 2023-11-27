@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors')
+
 require('dotenv').config();
 
 const blogRouter = require('./routes/blog');
@@ -33,6 +35,8 @@ app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static('uploads'));
+
+app.use(cors())
 
 
 // routes
