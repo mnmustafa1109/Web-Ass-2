@@ -1,1 +1,1 @@
-# A Boilerplate with Node.js, MongoDB, Express 
+# A Blogging Backend with Node.js, MongoDB, Express 
